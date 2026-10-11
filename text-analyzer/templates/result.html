@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Analysis Results</h1>
+    
+    <div class="stats">
+        <p><strong>Words:</strong> {{ word_count }}</p>
+        <p><strong>Characters:</strong> {{ char_count }}</p>
+        <p><strong>Sentences:</strong> {{ sentence_count }}</p>
+    </div>
+    
+    <h2>Most Frequent Words</h2>
+    <ul class="freq-list">
+        {% for word, count in freq %}
+        <li><strong>{{ word }}</strong> — {{ count }} times</li>
+        {% endfor %}
+    </ul>
+    
+    <a href="{{ url_for('post') }}" class="btn">Analyze Another</a>
+</div>
+{% endblock %}

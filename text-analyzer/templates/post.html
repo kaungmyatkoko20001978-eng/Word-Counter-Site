@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Text Analyzer</h1>
+    <form action="{{ url_for('post') }}" method="POST">
+        <textarea name="content" rows="15" placeholder="Paste your text here..." autofocus></textarea>
+        <button type="submit" class="btn">Analyze Text</button>
+    </form>
+</div>
+{% endblock %}
