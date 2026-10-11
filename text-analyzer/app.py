@@ -24,7 +24,7 @@ def post():
         sentence_count = content.count('.') + content.count('!') + content.count('?')
         
         clean_words = [word.strip('.,!?;()[]') for word in content.lower().split()]
-        clean_words = [word for word in clean_words if word]   # ← Remove empty
+        clean_words = [word for word in clean_words if word]   
         
         word_freqs = Counter(clean_words)
         word_frequency = word_freqs.most_common(10)
